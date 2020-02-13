@@ -9,6 +9,8 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.post = this.postService.buscarPostPrincipal();
+    console.log(this.post);
   }
 
 }

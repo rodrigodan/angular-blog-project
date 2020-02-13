@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostServiceService } from 'src/app/services/post-service.service';
+import { Post } from 'src/app/models/post.model';
 
 @Component({
   selector: 'app-post-secundario',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostSecundarioComponent implements OnInit {
 
-  constructor() { }
+  posts: Post[] = [];
+
+  constructor(private postService: PostServiceService) { }
 
   ngOnInit(): void {
+    this.posts = this.postService.buscarTodos().slice(1);
   }
 
 }
