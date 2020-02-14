@@ -10,6 +10,7 @@ export class PostServiceService {
 
   salvar(post: Post){
     const posts = this.buscarTodos();
+    console.log("teste: " + posts);
     posts.push(post);
     window.localStorage.setItem('posts',JSON.stringify(posts));
     console.log(post);
