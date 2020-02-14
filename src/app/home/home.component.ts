@@ -6,7 +6,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  message: string = ''
+
+  message2: string = 'hello world'
+
   constructor() { }
+
+  receiveMessage($event){
+    this.message = $event;
+    this.message2 = this.message;
+    // alert("here")
+    // console.log("updatedHere: " + $event)
+  }
 
   ngOnInit(): void {
     // this.post = this.postService.buscarPostPrincipal();

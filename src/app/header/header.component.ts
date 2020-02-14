@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  message:string = "Rodrigooooo"
+
+  @Output() messageEvent = new EventEmitter<string>();
+
   constructor() { }
+
+  sendMessage(){
+    
+    this.messageEvent.emit(this.message);
+  }
 
   ngOnInit(): void {
   }

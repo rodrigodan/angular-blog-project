@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Post } from 'src/app/models/post.model';
 import { PostServiceService } from 'src/app/services/post-service.service';
 
@@ -13,6 +13,8 @@ import { PostServiceService } from 'src/app/services/post-service.service';
 export class PostPrincipalComponent implements OnInit {
 
   post: Post = new Post();
+
+  @Input() message2: string;
 
   constructor(private postService: PostServiceService) { }
 

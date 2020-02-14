@@ -1,7 +1,9 @@
 <div class="container">
-  <app-header></app-header>
+  <app-header (messageEvent)="receiveMessage($event)"></app-header>
 
-  <app-post-principal></app-post-principal>
+  {{message}}
+
+  <app-post-principal [message2]="message2"></app-post-principal>
 
   <app-post-secundario></app-post-secundario>
 </div>
